@@ -10,11 +10,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #6a6e48;
+  /* background: #6a6e48; */
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
   margin-top: 250px;
+
+  animation: colorchange 2s linear 1s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 2s linear 0s infinite alternate; /* Chrome and Safari */
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background: red; color: cyan;}
+      33%  {background: green; color: magenta;}
+      66%  {background: blue; color: yellow;}
+      100% {background: red; color: cyan;}
+   }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: red; color: cyan;}
+      33%  {background: green; color: magenta;}
+      66%  {background: blue; color: yellow;}
+      100% {background: red; color: cyan;}
+   }
 }
 
 .perspective-text {
